@@ -1,24 +1,18 @@
 # sysd-ui
 
-## Project setup
-```
-npm install
+### 1. 安装组件库
+
+```shell
+npm install  sysd-ui
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 2. 使用组件库
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- 全局导入
 
-### Lints and fixes files
-```
-npm run lint
-```
+  ```js
+  import ItcaseUI from 'sysd-ui'
+  import 'sysd-ui/lib/sysd-ui.css'
+  Vue.use(ItcaseUI)
+  ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
