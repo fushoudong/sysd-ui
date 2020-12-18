@@ -1,6 +1,6 @@
 <template>
     <div>
-        <by-input :placeholder="'提示文字'" type="input" :rows="3" name="sex" v-model="value"></by-input>
+        <by-input :placeholder="'提示文字'" type="password" :rows="3" name="sex" v-model="value" show-password="true"></by-input>
     </div>
 </template>
 

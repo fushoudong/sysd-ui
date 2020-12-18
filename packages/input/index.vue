@@ -7,17 +7,25 @@
             :name="name"
             :disabled="disabled"
             :value="value"
-            @input="handleValueChange">
+            @input="handleValueChange"
+            @change="handleChange"
+            @blur="handleBlur"
+            @focus="handleFocus">
         </textarea>
-        <div v-else>
+        <div v-else class="input-div">
             <input            
-                :type="type"
+                :type="inputType"
                 :class="['by-input__inner', { disabled: disabled }]"
                 :placeholder="placeholder"
                 :name="name"
                 :disabled="disabled"
                 :value="value"
-                @input="handleValueChange"/>
+                @input="handleValueChange"
+                @blur="handleBlur"
+                @focus="handleFocus"
+                @change="handleChange"/>
+            <span class="by-icon-circle-close" v-if="value.length > 0 && Boolean(clearable)" @click="clearInput"></span>
+            <span class="by-icon-view" v-if="showPasswordIcon" @click="changePassword"></span>
         </div>
     </div>
 </template>
@@ -51,17 +59,47 @@ export default {
             default: ''
         },
         clearable: {
-            type: Boolean,
+            type: [Boolean, String],
             default: false
         },
         showPassword: {
-            type: Boolean,
+            type: [Boolean, String],
             default: false
+        }
+    },
+    computed: {
+        showPasswordIcon() {
+            return this.value.length > 0 || this.isFocus && this.showPassword
+        }
+    },
+    data() {
+        return {
+            inputType: this.type,
+            isFocus: false
         }
     },
     methods: {
         handleValueChange(event) {
             this.$emit('input', event.target.value)
+        },
+        clearInput() {
+            this.$emit('input', "")
+        },
+        changePassword() {
+            this.inputType === 'text'?
+            this.inputType = 'password':
+            this.inputType = 'text'
+        },
+        handleBlur(event) {
+            this.isFocus = false
+            this.$emit('blur', event.target.value)
+        },
+        handleFocus(event) {
+            this.isFocus = true
+            this.$emit('focus', event.target.value)
+        },
+        handleChange(event) {
+            this.$emit('change', event.target.value)
         }
     },
 };
@@ -118,6 +156,20 @@ export default {
             &:focus {
                 outline: none;
                 border: none;
+            }
+        }
+        .input-div {
+            position: relative;
+            span {
+                position: relative;
+                top: 50%;
+                right: 20px;
+                color: #c0c4cc;;
+                &:hover {
+                    color: #c0c4cc;
+                    cursor: pointer;
+                    transition: color .2s cubic-bezier(.645,.045,.355,1);
+                }
             }
         }
     }

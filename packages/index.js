@@ -7,11 +7,13 @@
 import Button from './button'
 import Dialog from './dialog'
 import Input from './input'
-import './fonts/iconfont.css'
+import Switch from './switch'
+import './fonts/font.scss'
 const components = [
     Button,
     Dialog,
-    Input
+    Input,
+    Switch
 ]
 const install = function(Vue) {
     // 注册所有组件

@@ -12,7 +12,7 @@ npm install  sysd-ui
 
   ```js
   import ItcaseUI from 'sysd-ui'
-  import 'sysd-ui/lib/sysd-ui.css'
+  import 'sysd-ui/dist/sysd-ui.css'
   Vue.use(ItcaseUI)
   ```
 

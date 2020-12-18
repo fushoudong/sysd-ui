@@ -9,7 +9,7 @@
                             <span class="by-dialog__title">{{title}}</span>
                     </slot>
                         <button class="by-dialog__headerbtn" @click="handleClose">
-                            <i class="iconfont icon-baseline-close-px"></i>
+                            <i class="by-icon-close"></i>
                         </button>
                     </div>
                     <div class="by-dialog__body">
@@ -120,12 +120,12 @@ export default {
     }
     @keyframes fade {
         0% {
+            transform: translate3d(0, -20px, 0);
             opacity: 0;
-            transform: translateY(-20px);
         }
         100% {
+            transform: translate3d(0, 0, 0);
             opacity: 1;
-            transform: translateY(0);
         }
     }
 </style>
