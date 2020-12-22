@@ -1,40 +1,38 @@
 <template>
     <div id="app">
-        <div class="row">
-            <!-- <button-view></button-view> -->
-            <!-- <dialog-view></dialog-view> -->
-            <!-- <input-view></input-view> -->
-            <!-- <by-button type="primary">按钮</by-button> -->
-            {{switchData}}
-             <by-switch v-model="switchData" active-color="red" inactive-color="green" @change="handleSwitch"></by-switch>
+        <main-header></main-header>
+        <div class="container">
+            <side-bar></side-bar>
         </div>
     </div>
 </template>
 
 <script>
-// // import ButtonView from './examples/button'
-// import DialogView from './views/dialog'
-// import InputView from './views/input'
+import mainHeader from './components/header.vue'
+import SideBar from './components/side-nav.vue'
 export default {
     name: "App",
     components: {
-        // ButtonView,
-        // DialogView,
-        // InputView
+        mainHeader,
+        SideBar
     },
     data() {
         return {
-            switchData: false
         }
     },
     methods: {
-        handleSwitch(e) {
-            console.log(e)
-        }
     }
 };
 </script>
 
 <style lang="scss" scoped>
-    
+    .container {
+        margin: 48px auto;
+        width: 90%;
+        background-color: #fff;
+        box-shadow: 0 40px 30px 0 rgba(223, 225, 230, .5);
+        .nav {
+            
+        }
+    }
 </style>

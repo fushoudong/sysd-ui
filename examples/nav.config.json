@@ -1,0 +1,46 @@
+{
+    "开发指南": [
+        {
+            "name": "site-index",
+            "path": "/"
+        },
+        {
+            "name": "introduce",
+            "path": "/introduce",
+            "desc": "介绍"
+        }
+    ],
+    "基础组件": [
+        {
+            "desc": "Basic组件",
+            "items": [
+                {
+                    "desc": "Button 按钮",
+                    "name": "by-button",
+                    "path": "/by-button"
+                },
+                {
+                    "desc": "Link 文字链接",
+                    "name": "by-link",
+                    "path": "/by-link"
+                }
+            ]
+        }, 
+        {
+            "desc": "Form组件",
+            "items": [
+                {
+                    "desc": "Input 组件",
+                    "name": "by-input",
+                    "path": "/by-input"
+                }
+            ]
+        }
+    ],
+    "业务组件": [
+        {
+            "desc": "基础业务",
+            "items": []
+        }
+    ]
+}
